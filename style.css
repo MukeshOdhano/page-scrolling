@@ -142,6 +142,38 @@ body {
     width: 100%;
   }
 }
+/* hero name */
+.hero-name {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 120%;
+    height: 100%;
+    border: 2px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .4s ease;
+  }
+  
+  &:hover::after {
+    height: 200%;
+    border-color: red;
+    background-color: red;
+    z-index: -1;
+    border-bottom: transparent;
+    border-top: transparent;
+  }
+  &:hover::before {
+    width: 130%;
+    border-color: blue;
+    border-bottom: transparent;
+    border-top: transparent;
+  }
+}
 /* when card is not active */
 .card {
   & .icon {
@@ -196,10 +228,10 @@ body {
   border-radius: 100px;
   cursor: pointer;
 
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s ease-in;
   &:hover {
     background-color: rgba(93, 93, 240, 1);
-    outline-offset: 2.5px;
+    outline-offset: 5px;
     color: white;
   }
 }
