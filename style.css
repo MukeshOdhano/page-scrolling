@@ -116,12 +116,6 @@ body {
   outline-offset: 5px;
 }
 
-.card h3 {
-  padding: 4px 10px;
-  text-align: center;
-  font-size: 1rem;
-  background-color: rgb(241, 125, 125);
-}
 /* img */
 .prof-pic {
   position: absolute;
@@ -149,29 +143,59 @@ body {
   &::before,
   &::after {
     content: "";
-    width: 120%;
     height: 100%;
+    width: 120%;
+
     border: 2px solid black;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all .4s ease;
+    transition: all 0.4s ease;
   }
-  
-  &:hover::after {
-    height: 200%;
+
+  &::after {
+    height: 0%;
     border-color: red;
-    background-color: red;
-    z-index: -1;
     border-bottom: transparent;
     border-top: transparent;
   }
-  &:hover::before {
-    width: 130%;
+  &::before {
+    width: 120%;
+    height: 0%;
     border-color: blue;
     border-bottom: transparent;
     border-top: transparent;
+  }
+
+  &:hover::after {
+    height: 180%;
+
+    animation: move1 2s infinite ease-in;
+  }
+  &:hover::before {
+    height: 100%;
+    width: 130%;
+    animation: move2 2s infinite ease-in;
+
+  }
+}
+@keyframes move1 {
+  0%,
+  100% {
+    width: 120%;
+  }
+  50% {
+    width: 110% ; animation-timing-function: ease-out;
+  }
+}
+@keyframes move2 {
+  0%,
+  100% {
+    width: 130%;
+  }
+  50% {
+    width: 120% ; animation-timing-function: ease-out;
   }
 }
 /* when card is not active */
