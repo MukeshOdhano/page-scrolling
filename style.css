@@ -266,3 +266,9 @@ body {
 .active-container .card:not(.active) {
   display: none;
 }
+
+@media (max-width: 768px){
+  .left{
+    font-size: 1.2rem;
+  }
+}
