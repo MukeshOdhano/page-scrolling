@@ -278,7 +278,10 @@ body {
     
   }
   
-.left{
-  height: 50%;
+  .left{
+    height: 50%;
+  }
+  .right{
+    height: 50%;
   }
 }
